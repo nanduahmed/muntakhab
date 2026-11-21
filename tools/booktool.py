@@ -13,6 +13,7 @@ from pathlib import Path
 
 from book_model import BASE, SCHEMA, Book, atomic_text, load_json, write_json
 from segment import apply_arabic_retry, missing_arabic_bands, segment_topic
+import corpus
 import store
 
 
@@ -24,6 +25,7 @@ def tally(records):
                         'unresolved':sum(r['status']=='unresolved' for r in found),
                         'english_candidates':sum(bool(r['english']) for r in found),
                         'arabic_candidates':sum(bool(r['arabic']) for r in found),
+                        'urdu_candidates':sum(bool(r.get('urdu')) for r in found),
                         'bilingual_candidates':sum(bool(r['english'] and r['arabic']) for r in found)}
     return report
 
@@ -163,6 +165,14 @@ def args_setup():
     o = cmd('source-page','render one printed page from the edition',out=True)
     o.add_argument('--pdf',type=Path,required=True); o.add_argument('--printed',type=int,required=True)
     cmd('init','initialize SQLite and seed the complete inventory',db=True)
+    ic = cmd('import-corpus','stage checked translations from the YAML corpus as versioned reviews',db=True,dry=True)
+    ic.add_argument('--file',type=Path,required=True)
+    ic.add_argument('--reviewer',help='name recorded against the staged translations (required when the corpus has text)')
+    b = cmd('build-corpus','write, refresh, or verify the committed YAML corpus inventory')
+    b.add_argument('--out',type=Path,default=BASE/'data'/'corpus.yaml')
+    b.add_argument('--merge',action='store_true',help='keep hand-entered text fields from the existing corpus')
+    b.add_argument('--force',action='store_true',help='discard the existing corpus and rebuild from the index')
+    b.add_argument('--check',action='store_true',help='verify the corpus matches the edition inventory; does not write')
     i = cmd('import','transactionally upsert staged OCR from a run',db=True,dry=True)
     i.add_argument('--bundle',type=Path,required=True)
     r = cmd('review-sheet','make a blank correction sheet with OCR evidence',db=True,scope=True,out=True)
@@ -179,6 +189,40 @@ def main():
     args = args_setup()
     try:
         book = Book(load_json(args.index))
+        if args.cmd=='build-corpus':
+            if args.check:
+                corpus.check_corpus_file(args.out,book)
+                print(f'Corpus inventory matches the edition index: {args.out}')
+                return 0
+            existing = args.out.exists()
+            if existing and not (args.merge or args.force):
+                raise ValueError(f'{args.out} already exists; use --merge to keep entered text, or --force to rebuild from scratch')
+            if existing and args.merge:
+                rows, provided = corpus.merge_corpus(book,args.out)
+                print(f'Carrying hand-entered text forward for {provided} entr{"y" if provided==1 else "ies"}')
+            else:
+                rows, provided = corpus.inventory_rows(book), 0
+            atomic_text(args.out, corpus.render_corpus(book, rows))
+            print(f'Wrote {args.out} · {len(rows)} entries')
+            return 0
+        if args.cmd=='import-corpus':
+            data = corpus.load_corpus(args.file)
+            dry_run = args.dry_run
+            with store.session(args.db,book,dry_run=dry_run) as db:
+                revisions = {eid: revision for eid,(_,revision,_) in store.reviewer_records(db).items()}
+                rows = corpus.review_rows(data,book,revisions)
+                if rows and not (args.reviewer and args.reviewer.strip()):
+                    raise ValueError('Supply --reviewer when the corpus contains text to stage')
+                stats = {'accepted':0,'unchanged':0,'skipped':0}
+                per_language = {lang: sum(1 for r in rows if r[lang]) for lang in corpus.LANGUAGES}
+                if rows:
+                    sheet = {'schema_version':SCHEMA,'manifest_sha256':book.manifest_sha,'pdf_sha256':book.pdf_sha,
+                             'reviewer':args.reviewer.strip(),'reviews':rows}
+                    stats.update(store.apply_reviews(db,sheet,book))
+                stats['pending_rows'] = len(data['entries'])-len(rows)
+                stats['languages'] = per_language
+                print(('Dry run · ' if dry_run else '')+str(stats))
+                return 0
         direct = {'extract':extract,'audit':audit,'source-page':source_crop}
         if args.cmd in direct:
             direct[args.cmd](args,book)

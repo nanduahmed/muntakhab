@@ -13,10 +13,10 @@ export function spreadUrl(printedPage) {
   return `${book.sources.flipbook.split('#')[0]}#${2 * scan - 2}-${2 * scan - 1}`;
 }
 
-export function inventory(topic, kind) {
-  if (kind === 'ayah') return topic.quran_references.map((reference, k) => ({ id: `ayah:${topic.id}:${k + 1}`, title: `Qur’an ${reference.replace('-', '–')}`, kind }));
+export function inventory(topic, kind, label) {
+  if (kind === 'ayah') return topic.quran_references.map((reference, k) => ({ id: `ayah:${topic.id}:${k + 1}`, title: `${label ?? 'Qur’an'} ${reference.replace('-', '–')}`, kind }));
   const { first, last, sequence_id: sequence } = topic.hadith_numbers;
-  return Array.from({ length: last - first + 1 }, (_, k) => ({ id: `hadith:${sequence}:${first + k}`, title: `Hadith ${first + k}`, kind }));
+  return Array.from({ length: last - first + 1 }, (_, k) => ({ id: `hadith:${sequence}:${first + k}`, title: `${label ?? 'Hadith'} ${first + k}`, kind }));
 }
 
 export function searchable(value) {

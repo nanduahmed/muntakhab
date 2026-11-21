@@ -6,7 +6,7 @@
 | --- | --- |
 | The printed hierarchy is already a useful mental model. | Keep the six main chapters in book order, followed by the separately labeled concluding section. Expand chapters in place; give each of the 29 topics a stable URL. |
 | Readers may arrive with a topic name but not its chapter. | Provide a chapter/topic filter, open matching chapters, keep book order, and make clearing the filter easy. Don’t imply that this searches the text of the book. |
-| The choice of *what* to read is different from the choice of *language*. | Use two separate controls: **Ayat / Ahadith** and **Both / Arabic / English**. Show Arabic right-to-left above the translation in bilingual mode. Keep the language choice for this browser session. |
+| The choice of *what* to read is different from the choice of *language*, and different again from the language of the *interface*. | Use three separate controls: **Ayat / Ahadith**, a reading-language switch (**All / Arabic / English / Urdu**), and an **interface language toggle (English ↔ اردو)** in the header. Arabic and Urdu render right-to-left (Naskh and Nastaliq). Keep both language choices for this browser session. Book content is never translated by the app; only interface chrome is. |
 | A verse count is not a list of passage cards. | Use the edition’s ayat and numbered-hadith totals on the contents page. In the reader, separately show the number of passage cards. Label partial verses as excerpts and don’t count quotations nested in hadith as standalone Ayat. |
 | OCR can introduce errors or attach a translation to the wrong entry. | Keep unreviewed words out of the reader. Show a reading preview notice and reference-only states; distinguish exact checked page spans from approximate OCR-located scan links. |
 | Some readers will work through the book continuously and others will jump in. | Include previous/next topics, a contents/chapter breadcrumb, and an original scan link. Start with at most 12 cards per category and make the rest available on demand. |
@@ -23,7 +23,7 @@ flowchart TD
   R -- Yes --> A[Ayat by citation]
   R -- No --> H[Ahadith by printed number]
   A <--> H
-  A --> L[Both, Arabic or English]
+  A --> L[All, Arabic, English or Urdu]
   H --> L
   L --> S{Checked transcription available?}
   S -- Yes --> V[Read text and edition note]
@@ -43,11 +43,15 @@ flowchart TD
 | About · `#/edition` | Identify the scan, translation, and book credits. | Direct PDF, flipbook, and printed Contents links. Printed pages and PDF indexes are not interchangeable. |
 | Invalid link | Return to contents. | Dedicated not-found screen, rather than a blank reader. |
 
+## Interface i18n (English / اردو)
+
+Every user-facing string lives in `src/i18n.jsx` in both interface languages; nothing untranslated ships. The header shows an **interface language** toggle (English ↔ اردو). Urdu mode sets `lang="ur"` and `dir="rtl"` on the document, renders chrome in Noto Nastaliq Urdu with letter-spacing disabled, and mirrors the layout via CSS logical properties (directional chevrons/arrows flip). The reader’s **Reading language** control is independent and offers **All / Arabic / English / Urdu**; Arabic and Urdu passages are right-to-left. Corpus text (Qur’an and Ahadith) is never translated by the app — translations are editor-supplied via `data/corpus.yaml` and enter only as reviewed text.
+
 ## Accessibility and layout decisions
 
 - Use native disclosure buttons (`aria-expanded` / `aria-controls`), semantic headings, and real route links. The two reading controls are named button groups with `aria-pressed`, not ARIA tabs without tab keyboard behavior.
 - Use visible focus, a skip link, routes that focus the new main content, and focus on the chapter button on return by breadcrumb. New entries can be reached without returning to the top of the topic.
-- Preserve comfortable line heights and right-to-left Arabic (`lang="ar"`, `dir="rtl"`) on small screens. Large layouts have a guide rail; small layouts retain the inline reading controls. No generated Arabic text appears in decorative art.
+- Preserve comfortable line heights and right-to-left Arabic (`lang="ar"`, `dir="rtl"`) and Urdu (`lang="ur"`, `dir="rtl"`) on small screens. Large layouts have a guide rail; small layouts retain the inline reading controls. No generated Arabic text appears in decorative art.
 - Use ink green, warm paper, serif reading type, and a muted supporting rail. Support reduced motion; combine color with button state or explicit text. Fonts are self-hosted.
 
 ## Skills consulted

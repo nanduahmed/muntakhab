@@ -16,7 +16,7 @@ async function mockReviewedSnapshot(page) {
   const { sources } = JSON.parse(readFileSync(new URL('../data/book-index.json', import.meta.url), 'utf8'));
   const fixture = (id, printed_start, printed_end, more = {}) => ({
     id, printed_start, printed_end, status: 'reviewed',
-    arabic: 'نص للاختبار فقط', english: 'Synthetic English fixture for this test.', ...more,
+    arabic: 'نص للاختبار فقط', english: 'Synthetic English fixture for this test.', urdu: 'مصنوعی اردو نمونہ برائے جانچ۔', ...more,
   });
   await page.route('**/data/readings.json', route => route.fulfill({ json: {
     schema_version: 1, pdf_sha256: sources.edition_pdf_sha256, locators: {},
@@ -145,4 +145,43 @@ test('public snapshot starts in reference-only mode without a load error', async
   await expect(entry.getByText('Reference only')).toBeVisible();
   await expect(entry.getByRole('link', { name: /Open topic scan/ })).toBeVisible();
   await expect(page.getByText(/Text could not be loaded/)).toHaveCount(0);
+});
+
+test('contents, reader and edition screens switch to the Urdu interface', async ({ page }) => {
+  await page.goto('/');
+  const languageBar = controls(page, 'Interface language');
+  await languageBar.getByRole('button', { name: 'اردو' }).click();
+  await expect(page.locator('html')).toHaveAttribute('lang', 'ur');
+  await expect(page.locator('html')).toHaveAttribute('dir', 'rtl');
+  await expect(page.getByRole('heading', { name: 'ابواب', exact: true })).toBeVisible();
+  await expect(page.getByRole('navigation', { name: 'Primary' }).getByRole('link', { name: 'فہرست' })).toBeVisible();
+  await expect(page.getByRole('link', { name: 'اس ایڈیشن کے بارے میں' })).toBeVisible();
+  await expect(page.getByRole('button', { name: 'ابواب دیکھیں' })).toBeVisible();
+  const result = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa']).analyze();
+  expect(result.violations).toEqual([]);
+  await page.reload();
+  await expect(page.locator('html')).toHaveAttribute('dir', 'rtl');
+  await expect(page.getByRole('heading', { name: 'ابواب', exact: true })).toBeVisible();
+  await controls(page, 'Interface language').getByRole('button', { name: 'English' }).click();
+  await expect(page.locator('html')).toHaveAttribute('dir', 'ltr');
+  await expect(page.getByRole('heading', { name: 'Chapters', exact: true })).toBeVisible();
+});
+
+test('reader shows Arabic, English and Urdu together or in isolation', async ({ page }) => {
+  await mockReviewedSnapshot(page);
+  await page.goto(iman); await ready(page);
+  const ayah = page.getByRole('article', { name: 'Qur’an 21:25' });
+  // All languages are shown by default.
+  await expect(ayah.locator('[lang=ar]')).toBeVisible();
+  await expect(ayah.locator('[lang=ur]')).toHaveText('مصنوعی اردو نمونہ برائے جانچ۔');
+  await expect(ayah.locator('[lang=ur]')).toHaveAttribute('dir', 'rtl');
+  await expect(ayah.getByText(/Synthetic English fixture/)).toBeVisible();
+  await controls(page, 'Reading language').getByRole('button', { name: 'Urdu' }).click();
+  await expect(ayah.locator('[lang=ur]')).toBeVisible();
+  await expect(ayah.locator('[lang=ar]')).toHaveCount(0);
+  await expect(ayah.locator('[lang=en]')).toHaveCount(0);
+  await controls(page, 'Reading language').getByRole('button', { name: 'All' }).click();
+  await expect(ayah.locator('[lang=ar]')).toBeVisible();
+  await expect(ayah.locator('[lang=ur]')).toBeVisible();
+  await expect(ayah.locator('[lang=en]')).toBeVisible();
 });
