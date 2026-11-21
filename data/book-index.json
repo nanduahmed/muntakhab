@@ -1,0 +1,1554 @@
+{
+  "schema_version": 1,
+  "book": {
+    "title": "Muntakhab Ahadith",
+    "subtitle": "A Selection of Ahadith Relating to the Six Qualities of Da‘wat and Tabligh",
+    "title_meaning": "Selected Hadith",
+    "compiler": "Maulana Muhammad Yousuf Kandhlavi",
+    "organized_and_presented_by": "Maulana Muhammad Saad Kandhlavi",
+    "imprint": "Maktaba Faiz Aam, Hazrat Nizamuddin, New Delhi",
+    "edition": "English translation with Arabic source passages; scanned edition hosted by The Islamic Bulletin",
+    "languages": [
+      "English",
+      "Arabic"
+    ],
+    "pagination": {
+      "first_numbered_body_page": 1,
+      "last_numbered_body_page": 671,
+      "last_printed_page": 678,
+      "pdf_pages": 349,
+      "flipbook_page_positions": 697,
+      "note": "PDF page numbers are one-based scan images. Flipbook spreads count positions from the cover. Printed p. 1 opens at #20-21."
+    }
+  },
+  "totals": {
+    "main_chapters": 6,
+    "concluding_sections": 1,
+    "subchapters": 29,
+    "counts": {
+      "ayat": 398,
+      "ayah_passages": 214,
+      "ahadith": 1507
+    }
+  },
+  "counting_rules": {
+    "scope": "Totals cover the six main chapters and the concluding section on printed pp. 1–671. Front and back matter are indexed but excluded.",
+    "ayat": "One for each cited verse occurrence in a standalone opening Qur’an passage. Ranges are inclusive; partial verses count once, and verses cited in multiple passages count again. Arabic and the English translation together count once. Embedded quotations in hadith, commentary, or front matter are excluded.",
+    "ayah_passages": "One for each standalone Qur’an quotation or citation block. For example, 24:15-17 is one passage containing three ayat.",
+    "ahadith": "One per printed numbered entry (including numbered reports and any variants carried under the same number as part of that entry). Repeat narrations are not deduplicated. Numbers are local to their sequence, not unique across the book.",
+    "ayah_reference_format": "surah:verse or surah:first-last, in the order of the printed passages. File references point to the Qur’an, not page numbers.",
+    "verification": "Opening Qur’an blocks and chapter/topic boundaries were checked against the Islamic Bulletin scan. The full numbered series were cross-checked against searchable transcriptions, with gaps in those transcriptions checked in the scan. Chapter and book counts are sums of the 29 topic rows."
+  },
+  "front_matter": [
+    {
+      "id": "title-page",
+      "title": "Title Page / Flipbook Cover",
+      "pages": {
+        "printed_start": null,
+        "printed_end": null,
+        "pdf_start": 1,
+        "pdf_end": 1,
+        "flipbook_spread": "1",
+        "start_side": "single",
+        "flipbook_url": "https://islamicbulletin.org/en/ebooks/resources/muntakhab_ahadith/index.html#1"
+      },
+      "note": "Title, subtitle, credits, and imprint."
+    },
+    {
+      "id": "imprint",
+      "title": "Printer’s Imprint",
+      "pages": {
+        "printed_start": null,
+        "printed_end": null,
+        "pdf_start": 2,
+        "pdf_end": 2,
+        "flipbook_spread": "2-3",
+        "start_side": "left",
+        "flipbook_url": "https://islamicbulletin.org/en/ebooks/resources/muntakhab_ahadith/index.html#2-3"
+      },
+      "note": "Jayyed Press, Ballimaran, Delhi."
+    },
+    {
+      "id": "contents",
+      "title": "Contents",
+      "pages": {
+        "printed_start": null,
+        "printed_end": null,
+        "pdf_start": 2,
+        "pdf_end": 3,
+        "flipbook_spread": "2-3",
+        "start_side": "right",
+        "flipbook_url": "https://islamicbulletin.org/en/ebooks/resources/muntakhab_ahadith/index.html#2-3"
+      },
+      "note": "Begins on the right of #2-3; continues on the left of #4-5."
+    },
+    {
+      "id": "phonetics",
+      "title": "Phonetics",
+      "pages": {
+        "printed_start": "iii",
+        "printed_end": "iv",
+        "pdf_start": 3,
+        "pdf_end": 4,
+        "flipbook_spread": "4-5",
+        "start_side": "right",
+        "flipbook_url": "https://islamicbulletin.org/en/ebooks/resources/muntakhab_ahadith/index.html#4-5"
+      },
+      "note": "Arabic letters, transliteration, and pronunciation."
+    },
+    {
+      "id": "preface",
+      "title": "Preface",
+      "pages": {
+        "printed_start": "v",
+        "printed_end": "vii",
+        "pdf_start": 4,
+        "pdf_end": 5,
+        "flipbook_spread": "6-7",
+        "start_side": "right",
+        "flipbook_url": "https://islamicbulletin.org/en/ebooks/resources/muntakhab_ahadith/index.html#6-7"
+      },
+      "note": "Signed by Abul Hasan ‘Ali Nadavi."
+    },
+    {
+      "id": "introduction",
+      "title": "Introduction",
+      "pages": {
+        "printed_start": "viii",
+        "printed_end": "xvii",
+        "pdf_start": 6,
+        "pdf_end": 10,
+        "flipbook_spread": "10-11",
+        "start_side": "left",
+        "flipbook_url": "https://islamicbulletin.org/en/ebooks/resources/muntakhab_ahadith/index.html#10-11"
+      },
+      "note": "Includes a quoted preface on pp. xv–xvii.",
+      "subsections": [
+        {
+          "id": "quoted-preface",
+          "title": "Quotation from the preface to Amāniyal Aḥbār Sharḥ Ma‘āniyal Āthār",
+          "pages": {
+            "printed_start": "xv",
+            "printed_end": "xvii",
+            "pdf_start": 9,
+            "pdf_end": 10,
+            "flipbook_spread": "16-17",
+            "start_side": "right",
+            "flipbook_url": "https://islamicbulletin.org/en/ebooks/resources/muntakhab_ahadith/index.html#16-17"
+          },
+          "note": "Nested in the Introduction; not separately listed in the printed Contents."
+        }
+      ]
+    }
+  ],
+  "chapters": [
+    {
+      "id": "kalimah-tayyibah",
+      "position": 1,
+      "kind": "quality",
+      "title": "Kalimah Tayyibah",
+      "meaning": "Declaration of faith",
+      "summary": "Faith in Allah and His Messenger, belief in the unseen and the Hereafter, and obedience to Allah’s commandments.",
+      "keywords": [
+        "faith",
+        "belief",
+        "unseen",
+        "Hereafter",
+        "obedience"
+      ],
+      "pages": {
+        "printed_start": 1,
+        "printed_end": 120,
+        "pdf_start": 11,
+        "pdf_end": 70,
+        "flipbook_spread": "20-21",
+        "start_side": "left",
+        "flipbook_url": "https://islamicbulletin.org/en/ebooks/resources/muntakhab_ahadith/index.html#20-21"
+      },
+      "counts": {
+        "ayat": 141,
+        "ayah_passages": 62,
+        "ahadith": 200
+      },
+      "hadith_sequences": [
+        {
+          "id": "kalimah",
+          "title": "Kalimah Tayyibah",
+          "hadith_numbers": "1–200",
+          "counts": {
+            "ayat": 141,
+            "ayah_passages": 62,
+            "ahadith": 200
+          },
+          "subchapter_ids": [
+            "kalimah-tayyibah.iman",
+            "kalimah-tayyibah.belief-in-the-unseen",
+            "kalimah-tayyibah.belief-in-the-hereafter",
+            "kalimah-tayyibah.obeying-allahs-commandments"
+          ]
+        }
+      ],
+      "subchapters": [
+        {
+          "id": "kalimah-tayyibah.iman",
+          "position": 1,
+          "title": "Iman (Faith)",
+          "pages": {
+            "printed_start": 1,
+            "printed_end": 29,
+            "pdf_start": 11,
+            "pdf_end": 25,
+            "flipbook_spread": "20-21",
+            "start_side": "left",
+            "flipbook_url": "https://islamicbulletin.org/en/ebooks/resources/muntakhab_ahadith/index.html#20-21"
+          },
+          "counts": {
+            "ayat": 7,
+            "ayah_passages": 7,
+            "ahadith": 69
+          },
+          "hadith_numbers": {
+            "sequence_id": "kalimah",
+            "first": 1,
+            "last": 69,
+            "first_entry_printed_page": 3
+          },
+          "quran_references": [
+            "21:25",
+            "8:2",
+            "4:175",
+            "40:51",
+            "6:82",
+            "2:165",
+            "6:162"
+          ]
+        },
+        {
+          "id": "kalimah-tayyibah.belief-in-the-unseen",
+          "position": 2,
+          "title": "Belief in the Unseen",
+          "pages": {
+            "printed_start": 30,
+            "printed_end": 66,
+            "pdf_start": 25,
+            "pdf_end": 43,
+            "flipbook_spread": "48-49",
+            "start_side": "right",
+            "flipbook_url": "https://islamicbulletin.org/en/ebooks/resources/muntakhab_ahadith/index.html#48-49"
+          },
+          "counts": {
+            "ayat": 42,
+            "ayah_passages": 26,
+            "ahadith": 57
+          },
+          "hadith_numbers": {
+            "sequence_id": "kalimah",
+            "first": 70,
+            "last": 126,
+            "first_entry_printed_page": 39
+          },
+          "quran_references": [
+            "2:177",
+            "35:3",
+            "6:101",
+            "56:58-59",
+            "56:63-64",
+            "56:68-72",
+            "6:95-99",
+            "45:36-37",
+            "3:26-27",
+            "6:59-60",
+            "6:14",
+            "15:21",
+            "4:139",
+            "29:60",
+            "6:46",
+            "28:71-72",
+            "42:32-34",
+            "34:10",
+            "28:81",
+            "26:63",
+            "54:50",
+            "7:54",
+            "7:59",
+            "31:27",
+            "9:51",
+            "10:107"
+          ]
+        },
+        {
+          "id": "kalimah-tayyibah.belief-in-the-hereafter",
+          "position": 3,
+          "title": "Belief in the Hereafter",
+          "pages": {
+            "printed_start": 67,
+            "printed_end": 100,
+            "pdf_start": 44,
+            "pdf_end": 60,
+            "flipbook_spread": "86-87",
+            "start_side": "left",
+            "flipbook_url": "https://islamicbulletin.org/en/ebooks/resources/muntakhab_ahadith/index.html#86-87"
+          },
+          "counts": {
+            "ayat": 76,
+            "ayah_passages": 14,
+            "ahadith": 47
+          },
+          "hadith_numbers": {
+            "sequence_id": "kalimah",
+            "first": 127,
+            "last": 173,
+            "first_entry_printed_page": 75
+          },
+          "quran_references": [
+            "22:1-2",
+            "70:10-15",
+            "14:42-43",
+            "7:8-9",
+            "35:33-35",
+            "44:51-57",
+            "76:5-22",
+            "56:27-40",
+            "41:31-32",
+            "38:55-58",
+            "77:29-33",
+            "39:16",
+            "44:43-50",
+            "14:16-17"
+          ]
+        },
+        {
+          "id": "kalimah-tayyibah.obeying-allahs-commandments",
+          "position": 4,
+          "title": "Success in Following Allah’s Commandments",
+          "pages": {
+            "printed_start": 101,
+            "printed_end": 120,
+            "pdf_start": 61,
+            "pdf_end": 70,
+            "flipbook_spread": "120-121",
+            "start_side": "left",
+            "flipbook_url": "https://islamicbulletin.org/en/ebooks/resources/muntakhab_ahadith/index.html#120-121"
+          },
+          "counts": {
+            "ayat": 16,
+            "ayah_passages": 15,
+            "ahadith": 27
+          },
+          "hadith_numbers": {
+            "sequence_id": "kalimah",
+            "first": 174,
+            "last": 200,
+            "first_entry_printed_page": 105
+          },
+          "quran_references": [
+            "33:36",
+            "4:64",
+            "59:7",
+            "33:21",
+            "24:63",
+            "16:97",
+            "33:71",
+            "3:31",
+            "19:96",
+            "20:112",
+            "65:2-3",
+            "6:6",
+            "18:46",
+            "16:96",
+            "28:60"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "salah",
+      "position": 2,
+      "kind": "quality",
+      "title": "Salah",
+      "meaning": "Prayer",
+      "summary": "Obligatory and voluntary prayer, congregational practice, devotion, ablution, and the role of the mosque.",
+      "keywords": [
+        "prayer",
+        "congregation",
+        "voluntary worship",
+        "wudu",
+        "mosque"
+      ],
+      "pages": {
+        "printed_start": 121,
+        "printed_end": 240,
+        "pdf_start": 71,
+        "pdf_end": 130,
+        "flipbook_spread": "140-141",
+        "start_side": "left",
+        "flipbook_url": "https://islamicbulletin.org/en/ebooks/resources/muntakhab_ahadith/index.html#140-141"
+      },
+      "counts": {
+        "ayat": 32,
+        "ayah_passages": 20,
+        "ahadith": 280
+      },
+      "hadith_sequences": [
+        {
+          "id": "salah",
+          "title": "Salah",
+          "hadith_numbers": "1–280",
+          "counts": {
+            "ayat": 32,
+            "ayah_passages": 20,
+            "ahadith": 280
+          },
+          "subchapter_ids": [
+            "salah.obligatory-prayers",
+            "salah.congregational-prayer",
+            "salah.sunnah-and-nafilah",
+            "salah.khushu-and-khudu",
+            "salah.virtues-of-wudu",
+            "salah.virtues-of-the-masjid"
+          ]
+        }
+      ],
+      "subchapters": [
+        {
+          "id": "salah.obligatory-prayers",
+          "position": 1,
+          "title": "Fard (Obligatory Prayers)",
+          "pages": {
+            "printed_start": 121,
+            "printed_end": 142,
+            "pdf_start": 71,
+            "pdf_end": 81,
+            "flipbook_spread": "140-141",
+            "start_side": "left",
+            "flipbook_url": "https://islamicbulletin.org/en/ebooks/resources/muntakhab_ahadith/index.html#140-141"
+          },
+          "counts": {
+            "ayat": 7,
+            "ayah_passages": 7,
+            "ahadith": 47
+          },
+          "hadith_numbers": {
+            "sequence_id": "salah",
+            "first": 1,
+            "last": 47,
+            "first_entry_printed_page": 123
+          },
+          "quran_references": [
+            "29:45",
+            "2:277",
+            "14:31",
+            "14:40",
+            "17:78",
+            "23:9",
+            "62:9"
+          ]
+        },
+        {
+          "id": "salah.congregational-prayer",
+          "position": 2,
+          "title": "Salah in Congregation",
+          "pages": {
+            "printed_start": 143,
+            "printed_end": 172,
+            "pdf_start": 82,
+            "pdf_end": 96,
+            "flipbook_spread": "162-163",
+            "start_side": "left",
+            "flipbook_url": "https://islamicbulletin.org/en/ebooks/resources/muntakhab_ahadith/index.html#162-163"
+          },
+          "counts": {
+            "ayat": 1,
+            "ayah_passages": 1,
+            "ahadith": 84
+          },
+          "hadith_numbers": {
+            "sequence_id": "salah",
+            "first": 48,
+            "last": 131,
+            "first_entry_printed_page": 143
+          },
+          "quran_references": [
+            "2:43"
+          ]
+        },
+        {
+          "id": "salah.sunnah-and-nafilah",
+          "position": 3,
+          "title": "Sunnah and Nafilah (Non-obligatory Prayers)",
+          "pages": {
+            "printed_start": 173,
+            "printed_end": 212,
+            "pdf_start": 97,
+            "pdf_end": 116,
+            "flipbook_spread": "192-193",
+            "start_side": "left",
+            "flipbook_url": "https://islamicbulletin.org/en/ebooks/resources/muntakhab_ahadith/index.html#192-193"
+          },
+          "counts": {
+            "ayat": 15,
+            "ayah_passages": 5,
+            "ahadith": 80
+          },
+          "hadith_numbers": {
+            "sequence_id": "salah",
+            "first": 132,
+            "last": 211,
+            "first_entry_printed_page": 175
+          },
+          "quran_references": [
+            "17:79",
+            "25:64",
+            "32:16-17",
+            "51:15-18",
+            "73:1-7"
+          ]
+        },
+        {
+          "id": "salah.khushu-and-khudu",
+          "position": 4,
+          "title": "Khushu’ and Khudu’ (Fear and Devotion in Prayer)",
+          "pages": {
+            "printed_start": 213,
+            "printed_end": 224,
+            "pdf_start": 117,
+            "pdf_end": 122,
+            "flipbook_spread": "232-233",
+            "start_side": "left",
+            "flipbook_url": "https://islamicbulletin.org/en/ebooks/resources/muntakhab_ahadith/index.html#232-233"
+          },
+          "counts": {
+            "ayat": 4,
+            "ayah_passages": 3,
+            "ahadith": 31
+          },
+          "hadith_numbers": {
+            "sequence_id": "salah",
+            "first": 212,
+            "last": 242,
+            "first_entry_printed_page": 214
+          },
+          "quran_references": [
+            "2:238",
+            "2:45",
+            "23:1-2"
+          ]
+        },
+        {
+          "id": "salah.virtues-of-wudu",
+          "position": 5,
+          "title": "Virtues of Wudu (Ablution)",
+          "pages": {
+            "printed_start": 225,
+            "printed_end": 234,
+            "pdf_start": 123,
+            "pdf_end": 127,
+            "flipbook_spread": "244-245",
+            "start_side": "left",
+            "flipbook_url": "https://islamicbulletin.org/en/ebooks/resources/muntakhab_ahadith/index.html#244-245"
+          },
+          "counts": {
+            "ayat": 2,
+            "ayah_passages": 2,
+            "ahadith": 23
+          },
+          "hadith_numbers": {
+            "sequence_id": "salah",
+            "first": 243,
+            "last": 265,
+            "first_entry_printed_page": 225
+          },
+          "quran_references": [
+            "5:6",
+            "9:108"
+          ]
+        },
+        {
+          "id": "salah.virtues-of-the-masjid",
+          "position": 6,
+          "title": "Deeds and Virtues of the Masjid",
+          "pages": {
+            "printed_start": 235,
+            "printed_end": 240,
+            "pdf_start": 128,
+            "pdf_end": 130,
+            "flipbook_spread": "254-255",
+            "start_side": "left",
+            "flipbook_url": "https://islamicbulletin.org/en/ebooks/resources/muntakhab_ahadith/index.html#254-255"
+          },
+          "counts": {
+            "ayat": 3,
+            "ayah_passages": 2,
+            "ahadith": 15
+          },
+          "hadith_numbers": {
+            "sequence_id": "salah",
+            "first": 266,
+            "last": 280,
+            "first_entry_printed_page": 236
+          },
+          "quran_references": [
+            "9:18",
+            "24:36-37"
+          ]
+        }
+      ],
+      "aliases": [
+        "Salat"
+      ]
+    },
+    {
+      "id": "ilm-and-dhikr",
+      "position": 3,
+      "kind": "quality",
+      "title": "‘Ilm and Dhikr",
+      "meaning": "Knowledge and remembrance of Allah",
+      "summary": "Learning and responding to revelation, reciting the Qur’an, remembering Allah, and making supplication. The chapter prints two separate hadith numbering sequences.",
+      "keywords": [
+        "religious knowledge",
+        "Qur’an",
+        "remembrance",
+        "dhikr",
+        "du‘a"
+      ],
+      "pages": {
+        "printed_start": 241,
+        "printed_end": 394,
+        "pdf_start": 131,
+        "pdf_end": 207,
+        "flipbook_spread": "260-261",
+        "start_side": "left",
+        "flipbook_url": "https://islamicbulletin.org/en/ebooks/resources/muntakhab_ahadith/index.html#260-261"
+      },
+      "counts": {
+        "ayat": 77,
+        "ayah_passages": 52,
+        "ahadith": 333
+      },
+      "hadith_sequences": [
+        {
+          "id": "ilm",
+          "title": "‘Ilm (Knowledge)",
+          "hadith_numbers": "1–57",
+          "counts": {
+            "ayat": 17,
+            "ayah_passages": 16,
+            "ahadith": 57
+          },
+          "subchapter_ids": [
+            "ilm-and-dhikr.ilm",
+            "ilm-and-dhikr.inspiration-from-quran-and-hadith"
+          ]
+        },
+        {
+          "id": "dhikr",
+          "title": "Dhikr (Remembrance)",
+          "hadith_numbers": "1–276",
+          "counts": {
+            "ayat": 60,
+            "ayah_passages": 36,
+            "ahadith": 276
+          },
+          "subchapter_ids": [
+            "ilm-and-dhikr.virtues-of-the-quran",
+            "ilm-and-dhikr.remembering-allah",
+            "ilm-and-dhikr.prophetic-dua-and-dhikr"
+          ]
+        }
+      ],
+      "subchapters": [
+        {
+          "id": "ilm-and-dhikr.ilm",
+          "position": 1,
+          "title": "‘Ilm (Knowledge)",
+          "pages": {
+            "printed_start": 241,
+            "printed_end": 264,
+            "pdf_start": 131,
+            "pdf_end": 142,
+            "flipbook_spread": "260-261",
+            "start_side": "left",
+            "flipbook_url": "https://islamicbulletin.org/en/ebooks/resources/muntakhab_ahadith/index.html#260-261"
+          },
+          "counts": {
+            "ayat": 11,
+            "ayah_passages": 11,
+            "ahadith": 54
+          },
+          "hadith_numbers": {
+            "sequence_id": "ilm",
+            "first": 1,
+            "last": 54,
+            "first_entry_printed_page": 244
+          },
+          "quran_references": [
+            "2:151",
+            "4:113",
+            "20:114",
+            "27:15",
+            "29:43",
+            "35:28",
+            "39:9",
+            "58:11",
+            "2:42",
+            "2:44",
+            "11:88"
+          ]
+        },
+        {
+          "id": "ilm-and-dhikr.inspiration-from-quran-and-hadith",
+          "position": 2,
+          "title": "Inspiration from the Qur’an and Hadith",
+          "pages": {
+            "printed_start": 265,
+            "printed_end": 267,
+            "pdf_start": 143,
+            "pdf_end": 144,
+            "flipbook_spread": "284-285",
+            "start_side": "left",
+            "flipbook_url": "https://islamicbulletin.org/en/ebooks/resources/muntakhab_ahadith/index.html#284-285"
+          },
+          "counts": {
+            "ayat": 6,
+            "ayah_passages": 5,
+            "ahadith": 3
+          },
+          "hadith_numbers": {
+            "sequence_id": "ilm",
+            "first": 55,
+            "last": 57,
+            "first_entry_printed_page": 266
+          },
+          "quran_references": [
+            "5:83",
+            "7:204",
+            "18:70",
+            "39:17-18",
+            "39:23"
+          ]
+        },
+        {
+          "id": "ilm-and-dhikr.virtues-of-the-quran",
+          "position": 3,
+          "title": "Virtues of the Qur’an",
+          "pages": {
+            "printed_start": 268,
+            "printed_end": 298,
+            "pdf_start": 144,
+            "pdf_end": 159,
+            "flipbook_spread": "286-287",
+            "start_side": "right",
+            "flipbook_url": "https://islamicbulletin.org/en/ebooks/resources/muntakhab_ahadith/index.html#286-287"
+          },
+          "counts": {
+            "ayat": 14,
+            "ayah_passages": 7,
+            "ahadith": 71
+          },
+          "hadith_numbers": {
+            "sequence_id": "dhikr",
+            "first": 1,
+            "last": 71,
+            "first_entry_printed_page": 270
+          },
+          "quran_references": [
+            "10:57-58",
+            "16:102",
+            "17:82",
+            "29:45",
+            "35:29",
+            "56:75-81",
+            "59:21"
+          ]
+        },
+        {
+          "id": "ilm-and-dhikr.remembering-allah",
+          "position": 4,
+          "title": "Virtues of Remembering Allah",
+          "pages": {
+            "printed_start": 299,
+            "printed_end": 353,
+            "pdf_start": 160,
+            "pdf_end": 187,
+            "flipbook_spread": "318-319",
+            "start_side": "left",
+            "flipbook_url": "https://islamicbulletin.org/en/ebooks/resources/muntakhab_ahadith/index.html#318-319"
+          },
+          "counts": {
+            "ayat": 27,
+            "ayah_passages": 21,
+            "ahadith": 118
+          },
+          "hadith_numbers": {
+            "sequence_id": "dhikr",
+            "first": 72,
+            "last": 189,
+            "first_entry_printed_page": 304
+          },
+          "quran_references": [
+            "2:152",
+            "73:8",
+            "13:28",
+            "29:45",
+            "3:191",
+            "2:200",
+            "7:205",
+            "10:61",
+            "26:217-220",
+            "57:4",
+            "43:36",
+            "37:143-144",
+            "30:17",
+            "33:41-42",
+            "33:56",
+            "3:135-136",
+            "8:33",
+            "16:119",
+            "27:46",
+            "24:31",
+            "66:8"
+          ]
+        },
+        {
+          "id": "ilm-and-dhikr.prophetic-dua-and-dhikr",
+          "position": 5,
+          "title": "Prophetic Du‘a and Dhikr",
+          "pages": {
+            "printed_start": 354,
+            "printed_end": 394,
+            "pdf_start": 187,
+            "pdf_end": 207,
+            "flipbook_spread": "372-373",
+            "start_side": "right",
+            "flipbook_url": "https://islamicbulletin.org/en/ebooks/resources/muntakhab_ahadith/index.html#372-373"
+          },
+          "counts": {
+            "ayat": 19,
+            "ayah_passages": 8,
+            "ahadith": 87
+          },
+          "hadith_numbers": {
+            "sequence_id": "dhikr",
+            "first": 190,
+            "last": 276,
+            "first_entry_printed_page": 356
+          },
+          "quran_references": [
+            "2:186",
+            "25:77",
+            "7:55",
+            "7:56",
+            "7:180",
+            "27:62",
+            "2:156-157",
+            "20:24-34"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ikram-ul-muslim",
+      "position": 4,
+      "kind": "quality",
+      "title": "Ikram-ul-Muslim",
+      "meaning": "Honoring Muslims and fulfilling their rights",
+      "summary": "Dignity, good conduct, mutual obligations, kinship, avoiding harm, reconciliation, and helping others.",
+      "keywords": [
+        "dignity",
+        "character",
+        "rights",
+        "kinship",
+        "reconciliation",
+        "helping"
+      ],
+      "pages": {
+        "printed_start": 395,
+        "printed_end": 526,
+        "pdf_start": 208,
+        "pdf_end": 273,
+        "flipbook_spread": "414-415",
+        "start_side": "left",
+        "flipbook_url": "https://islamicbulletin.org/en/ebooks/resources/muntakhab_ahadith/index.html#414-415"
+      },
+      "counts": {
+        "ayat": 36,
+        "ayah_passages": 25,
+        "ahadith": 390
+      },
+      "hadith_sequences": [
+        {
+          "id": "ikram-ul-muslim",
+          "title": "Ikram-ul-Muslim",
+          "hadith_numbers": "1–390",
+          "counts": {
+            "ayat": 36,
+            "ayah_passages": 25,
+            "ahadith": 390
+          },
+          "subchapter_ids": [
+            "ikram-ul-muslim.dignity-of-a-muslim",
+            "ikram-ul-muslim.excellence-of-conduct",
+            "ikram-ul-muslim.rights-of-muslims",
+            "ikram-ul-muslim.bonds-of-kinship",
+            "ikram-ul-muslim.warning-against-harm",
+            "ikram-ul-muslim.reconciling-differences",
+            "ikram-ul-muslim.helping-muslims"
+          ]
+        }
+      ],
+      "subchapters": [
+        {
+          "id": "ikram-ul-muslim.dignity-of-a-muslim",
+          "position": 1,
+          "title": "Dignity of a Muslim",
+          "pages": {
+            "printed_start": 395,
+            "printed_end": 409,
+            "pdf_start": 208,
+            "pdf_end": 215,
+            "flipbook_spread": "414-415",
+            "start_side": "left",
+            "flipbook_url": "https://islamicbulletin.org/en/ebooks/resources/muntakhab_ahadith/index.html#414-415"
+          },
+          "counts": {
+            "ayat": 4,
+            "ayah_passages": 4,
+            "ahadith": 40
+          },
+          "hadith_numbers": {
+            "sequence_id": "ikram-ul-muslim",
+            "first": 1,
+            "last": 40,
+            "first_entry_printed_page": 396
+          },
+          "quran_references": [
+            "2:221",
+            "6:122",
+            "32:18",
+            "35:32"
+          ]
+        },
+        {
+          "id": "ikram-ul-muslim.excellence-of-conduct",
+          "position": 2,
+          "title": "Excellence of Conduct",
+          "pages": {
+            "printed_start": 410,
+            "printed_end": 423,
+            "pdf_start": 215,
+            "pdf_end": 222,
+            "flipbook_spread": "428-429",
+            "start_side": "right",
+            "flipbook_url": "https://islamicbulletin.org/en/ebooks/resources/muntakhab_ahadith/index.html#428-429"
+          },
+          "counts": {
+            "ayat": 8,
+            "ayah_passages": 6,
+            "ahadith": 46
+          },
+          "hadith_numbers": {
+            "sequence_id": "ikram-ul-muslim",
+            "first": 41,
+            "last": 86,
+            "first_entry_printed_page": 412
+          },
+          "quran_references": [
+            "15:88",
+            "3:133-134",
+            "25:63",
+            "42:40",
+            "42:37",
+            "31:18-19"
+          ]
+        },
+        {
+          "id": "ikram-ul-muslim.rights-of-muslims",
+          "position": 3,
+          "title": "Rights of Muslims",
+          "pages": {
+            "printed_start": 424,
+            "printed_end": 479,
+            "pdf_start": 222,
+            "pdf_end": 250,
+            "flipbook_spread": "442-443",
+            "start_side": "right",
+            "flipbook_url": "https://islamicbulletin.org/en/ebooks/resources/muntakhab_ahadith/index.html#442-443"
+          },
+          "counts": {
+            "ayat": 8,
+            "ayah_passages": 5,
+            "ahadith": 166
+          },
+          "hadith_numbers": {
+            "sequence_id": "ikram-ul-muslim",
+            "first": 87,
+            "last": 252,
+            "first_entry_printed_page": 426
+          },
+          "quran_references": [
+            "49:10",
+            "49:11-13",
+            "4:135",
+            "4:86",
+            "17:23-24"
+          ],
+          "count_note": "The citation ending on printed p. 425 has irregular punctuation in English. The passage quotes 49:11, 49:12 and 49:13; normalized to 49:11-13."
+        },
+        {
+          "id": "ikram-ul-muslim.bonds-of-kinship",
+          "position": 4,
+          "title": "Strengthening the Bonds of Kinship",
+          "pages": {
+            "printed_start": 480,
+            "printed_end": 487,
+            "pdf_start": 250,
+            "pdf_end": 254,
+            "flipbook_spread": "498-499",
+            "start_side": "right",
+            "flipbook_url": "https://islamicbulletin.org/en/ebooks/resources/muntakhab_ahadith/index.html#498-499"
+          },
+          "counts": {
+            "ayat": 2,
+            "ayah_passages": 2,
+            "ahadith": 23
+          },
+          "hadith_numbers": {
+            "sequence_id": "ikram-ul-muslim",
+            "first": 253,
+            "last": 275,
+            "first_entry_printed_page": 481
+          },
+          "quran_references": [
+            "4:36",
+            "16:90"
+          ]
+        },
+        {
+          "id": "ikram-ul-muslim.warning-against-harm",
+          "position": 5,
+          "title": "Warning Against Harming Muslims",
+          "pages": {
+            "printed_start": 488,
+            "printed_end": 511,
+            "pdf_start": 254,
+            "pdf_end": 266,
+            "flipbook_spread": "506-507",
+            "start_side": "right",
+            "flipbook_url": "https://islamicbulletin.org/en/ebooks/resources/muntakhab_ahadith/index.html#506-507"
+          },
+          "counts": {
+            "ayat": 8,
+            "ayah_passages": 3,
+            "ahadith": 74
+          },
+          "hadith_numbers": {
+            "sequence_id": "ikram-ul-muslim",
+            "first": 276,
+            "last": 349,
+            "first_entry_printed_page": 489
+          },
+          "quran_references": [
+            "33:58",
+            "83:1-6",
+            "104:1"
+          ],
+          "count_note": "The English reference on printed p. 488 uses a colon between 1 and 6. The passage quotes all six verses; normalized to 83:1-6."
+        },
+        {
+          "id": "ikram-ul-muslim.reconciling-differences",
+          "position": 6,
+          "title": "Reconciling Differences Among Muslims",
+          "pages": {
+            "printed_start": 512,
+            "printed_end": 517,
+            "pdf_start": 266,
+            "pdf_end": 269,
+            "flipbook_spread": "530-531",
+            "start_side": "right",
+            "flipbook_url": "https://islamicbulletin.org/en/ebooks/resources/muntakhab_ahadith/index.html#530-531"
+          },
+          "counts": {
+            "ayat": 1,
+            "ayah_passages": 1,
+            "ahadith": 18
+          },
+          "hadith_numbers": {
+            "sequence_id": "ikram-ul-muslim",
+            "first": 350,
+            "last": 367,
+            "first_entry_printed_page": 512
+          },
+          "quran_references": [
+            "3:103"
+          ]
+        },
+        {
+          "id": "ikram-ul-muslim.helping-muslims",
+          "position": 7,
+          "title": "Helping Muslims",
+          "pages": {
+            "printed_start": 518,
+            "printed_end": 526,
+            "pdf_start": 269,
+            "pdf_end": 273,
+            "flipbook_spread": "536-537",
+            "start_side": "right",
+            "flipbook_url": "https://islamicbulletin.org/en/ebooks/resources/muntakhab_ahadith/index.html#536-537"
+          },
+          "counts": {
+            "ayat": 5,
+            "ayah_passages": 4,
+            "ahadith": 23
+          },
+          "hadith_numbers": {
+            "sequence_id": "ikram-ul-muslim",
+            "first": 368,
+            "last": 390,
+            "first_entry_printed_page": 519
+          },
+          "quran_references": [
+            "2:261",
+            "2:274",
+            "3:92",
+            "76:8-9"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ikhlas",
+      "position": 5,
+      "kind": "quality",
+      "title": "Ikhlas",
+      "meaning": "Sincerity of intention",
+      "summary": "Acting sincerely for Allah, trusting His promises, and avoiding acts done to be seen by others (riya’).",
+      "keywords": [
+        "intention",
+        "sincerity",
+        "reward",
+        "riya’"
+      ],
+      "pages": {
+        "printed_start": 527,
+        "printed_end": 556,
+        "pdf_start": 274,
+        "pdf_end": 288,
+        "flipbook_spread": "546-547",
+        "start_side": "left",
+        "flipbook_url": "https://islamicbulletin.org/en/ebooks/resources/muntakhab_ahadith/index.html#546-547"
+      },
+      "counts": {
+        "ayat": 11,
+        "ayah_passages": 9,
+        "ahadith": 62
+      },
+      "hadith_sequences": [
+        {
+          "id": "ikhlas",
+          "title": "Ikhlas",
+          "hadith_numbers": "1–62",
+          "counts": {
+            "ayat": 11,
+            "ayah_passages": 9,
+            "ahadith": 62
+          },
+          "subchapter_ids": [
+            "ikhlas.sincerity-of-intention",
+            "ikhlas.promises-and-rewards",
+            "ikhlas.condemnation-of-riya"
+          ]
+        }
+      ],
+      "subchapters": [
+        {
+          "id": "ikhlas.sincerity-of-intention",
+          "position": 1,
+          "title": "Sincerity of Intention",
+          "pages": {
+            "printed_start": 527,
+            "printed_end": 539,
+            "pdf_start": 274,
+            "pdf_end": 280,
+            "flipbook_spread": "546-547",
+            "start_side": "left",
+            "flipbook_url": "https://islamicbulletin.org/en/ebooks/resources/muntakhab_ahadith/index.html#546-547"
+          },
+          "counts": {
+            "ayat": 7,
+            "ayah_passages": 7,
+            "ahadith": 24
+          },
+          "hadith_numbers": {
+            "sequence_id": "ikhlas",
+            "first": 1,
+            "last": 24,
+            "first_entry_printed_page": 529
+          },
+          "quran_references": [
+            "2:112",
+            "2:272",
+            "3:145",
+            "26:145",
+            "30:39",
+            "7:29",
+            "22:37"
+          ]
+        },
+        {
+          "id": "ikhlas.promises-and-rewards",
+          "position": 2,
+          "title": "Belief in Allah’s Promises and Hope of Reward",
+          "pages": {
+            "printed_start": 540,
+            "printed_end": 543,
+            "pdf_start": 280,
+            "pdf_end": 282,
+            "flipbook_spread": "558-559",
+            "start_side": "right",
+            "flipbook_url": "https://islamicbulletin.org/en/ebooks/resources/muntakhab_ahadith/index.html#558-559"
+          },
+          "counts": {
+            "ayat": 0,
+            "ayah_passages": 0,
+            "ahadith": 10
+          },
+          "hadith_numbers": {
+            "sequence_id": "ikhlas",
+            "first": 25,
+            "last": 34,
+            "first_entry_printed_page": 540
+          },
+          "quran_references": [],
+          "count_note": "Printed p. 540 goes straight to Ahadith with no standalone Qur’anic opening passage. Qur’an quoted only inside a hadith or its note is outside this count."
+        },
+        {
+          "id": "ikhlas.condemnation-of-riya",
+          "position": 3,
+          "title": "Condemnation of Riya’ (Showing Off)",
+          "pages": {
+            "printed_start": 544,
+            "printed_end": 556,
+            "pdf_start": 282,
+            "pdf_end": 288,
+            "flipbook_spread": "562-563",
+            "start_side": "right",
+            "flipbook_url": "https://islamicbulletin.org/en/ebooks/resources/muntakhab_ahadith/index.html#562-563"
+          },
+          "counts": {
+            "ayat": 4,
+            "ayah_passages": 2,
+            "ahadith": 28
+          },
+          "hadith_numbers": {
+            "sequence_id": "ikhlas",
+            "first": 35,
+            "last": 62,
+            "first_entry_printed_page": 545
+          },
+          "quran_references": [
+            "4:142",
+            "107:4-6"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dawat-and-tabligh",
+      "position": 6,
+      "kind": "quality",
+      "title": "Da‘wat and Tabligh",
+      "meaning": "Inviting people to Allah and conveying His message",
+      "summary": "The virtues of inviting to Allah, going out in His path, and the manners and deeds associated with the effort.",
+      "keywords": [
+        "da‘wat",
+        "tabligh",
+        "invitation",
+        "religious outreach",
+        "etiquette"
+      ],
+      "pages": {
+        "printed_start": 557,
+        "printed_end": 654,
+        "pdf_start": 289,
+        "pdf_end": 337,
+        "flipbook_spread": "576-577",
+        "start_side": "left",
+        "flipbook_url": "https://islamicbulletin.org/en/ebooks/resources/muntakhab_ahadith/index.html#576-577"
+      },
+      "counts": {
+        "ayat": 92,
+        "ayah_passages": 39,
+        "ahadith": 193
+      },
+      "hadith_sequences": [
+        {
+          "id": "dawat-and-tabligh",
+          "title": "Da‘wat and Tabligh",
+          "hadith_numbers": "1–193",
+          "counts": {
+            "ayat": 92,
+            "ayah_passages": 39,
+            "ahadith": 193
+          },
+          "subchapter_ids": [
+            "dawat-and-tabligh.dawat-and-its-virtues",
+            "dawat-and-tabligh.going-out-in-allahs-path",
+            "dawat-and-tabligh.etiquette-and-deeds"
+          ]
+        }
+      ],
+      "subchapters": [
+        {
+          "id": "dawat-and-tabligh.dawat-and-its-virtues",
+          "position": 1,
+          "title": "Da‘wat and Its Virtues",
+          "pages": {
+            "printed_start": 557,
+            "printed_end": 591,
+            "pdf_start": 289,
+            "pdf_end": 306,
+            "flipbook_spread": "576-577",
+            "start_side": "left",
+            "flipbook_url": "https://islamicbulletin.org/en/ebooks/resources/muntakhab_ahadith/index.html#576-577"
+          },
+          "counts": {
+            "ayat": 71,
+            "ayah_passages": 27,
+            "ahadith": 43
+          },
+          "hadith_numbers": {
+            "sequence_id": "dawat-and-tabligh",
+            "first": 1,
+            "last": 43,
+            "first_entry_printed_page": 571
+          },
+          "quran_references": [
+            "10:25",
+            "62:2",
+            "25:51-52",
+            "16:125",
+            "51:55",
+            "74:1-3",
+            "26:3",
+            "9:128",
+            "35:8",
+            "71:1-20",
+            "26:23-28",
+            "20:49-53",
+            "14:5",
+            "7:68",
+            "40:38-45",
+            "31:17",
+            "7:164-165",
+            "11:116-117",
+            "103:1-3",
+            "3:110",
+            "12:108",
+            "9:71",
+            "5:2",
+            "41:33-35",
+            "66:6",
+            "22:41",
+            "22:78"
+          ]
+        },
+        {
+          "id": "dawat-and-tabligh.going-out-in-allahs-path",
+          "position": 2,
+          "title": "Virtues of Going Out in the Path of Allah",
+          "pages": {
+            "printed_start": 592,
+            "printed_end": 613,
+            "pdf_start": 306,
+            "pdf_end": 317,
+            "flipbook_spread": "610-611",
+            "start_side": "right",
+            "flipbook_url": "https://islamicbulletin.org/en/ebooks/resources/muntakhab_ahadith/index.html#610-611"
+          },
+          "counts": {
+            "ayat": 12,
+            "ayah_passages": 8,
+            "ahadith": 55
+          },
+          "hadith_numbers": {
+            "sequence_id": "dawat-and-tabligh",
+            "first": 44,
+            "last": 98,
+            "first_entry_printed_page": 595
+          },
+          "quran_references": [
+            "8:74",
+            "9:20-22",
+            "29:69",
+            "29:6",
+            "49:15",
+            "61:10-12",
+            "9:24",
+            "2:195"
+          ]
+        },
+        {
+          "id": "dawat-and-tabligh.etiquette-and-deeds",
+          "position": 3,
+          "title": "Etiquette and Deeds in the Path of Allah",
+          "pages": {
+            "printed_start": 614,
+            "printed_end": 654,
+            "pdf_start": 317,
+            "pdf_end": 337,
+            "flipbook_spread": "632-633",
+            "start_side": "right",
+            "flipbook_url": "https://islamicbulletin.org/en/ebooks/resources/muntakhab_ahadith/index.html#632-633"
+          },
+          "counts": {
+            "ayat": 9,
+            "ayah_passages": 4,
+            "ahadith": 95
+          },
+          "hadith_numbers": {
+            "sequence_id": "dawat-and-tabligh",
+            "first": 99,
+            "last": 193,
+            "first_entry_printed_page": 616
+          },
+          "quran_references": [
+            "20:42-46",
+            "3:159",
+            "7:199-200",
+            "73:10"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "avoiding-the-irrelevant",
+      "position": 7,
+      "kind": "concluding_section",
+      "title": "Avoiding the Irrelevant",
+      "meaning": "Leaving aside what does not concern you",
+      "summary": "A concluding section on guarding speech, verifying reports, and leaving aside harmful or unprofitable matters. It follows, but is not one of, the six qualities named in the subtitle.",
+      "keywords": [
+        "speech",
+        "verification",
+        "rumor",
+        "self-restraint"
+      ],
+      "pages": {
+        "printed_start": 655,
+        "printed_end": 671,
+        "pdf_start": 338,
+        "pdf_end": 346,
+        "flipbook_spread": "674-675",
+        "start_side": "left",
+        "flipbook_url": "https://islamicbulletin.org/en/ebooks/resources/muntakhab_ahadith/index.html#674-675"
+      },
+      "counts": {
+        "ayat": 9,
+        "ayah_passages": 7,
+        "ahadith": 49
+      },
+      "hadith_sequences": [
+        {
+          "id": "avoiding-the-irrelevant",
+          "title": "Avoiding the Irrelevant",
+          "hadith_numbers": "1–49",
+          "counts": {
+            "ayat": 9,
+            "ayah_passages": 7,
+            "ahadith": 49
+          },
+          "subchapter_ids": [
+            "avoiding-the-irrelevant.avoiding-irrelevant-matters"
+          ]
+        }
+      ],
+      "subchapters": [
+        {
+          "id": "avoiding-the-irrelevant.avoiding-irrelevant-matters",
+          "position": 1,
+          "title": "Avoiding the Irrelevant",
+          "pages": {
+            "printed_start": 655,
+            "printed_end": 671,
+            "pdf_start": 338,
+            "pdf_end": 346,
+            "flipbook_spread": "674-675",
+            "start_side": "left",
+            "flipbook_url": "https://islamicbulletin.org/en/ebooks/resources/muntakhab_ahadith/index.html#674-675"
+          },
+          "counts": {
+            "ayat": 9,
+            "ayah_passages": 7,
+            "ahadith": 49
+          },
+          "hadith_numbers": {
+            "sequence_id": "avoiding-the-irrelevant",
+            "first": 1,
+            "last": 49,
+            "first_entry_printed_page": 657
+          },
+          "quran_references": [
+            "17:53",
+            "23:3",
+            "24:15-17",
+            "25:72",
+            "28:55",
+            "49:6",
+            "50:18"
+          ]
+        }
+      ]
+    }
+  ],
+  "back_matter": [
+    {
+      "id": "glossary",
+      "title": "Glossary",
+      "pages": {
+        "printed_start": 672,
+        "printed_end": 674,
+        "pdf_start": 346,
+        "pdf_end": 347,
+        "flipbook_spread": "690-691",
+        "start_side": "right",
+        "flipbook_url": "https://islamicbulletin.org/en/ebooks/resources/muntakhab_ahadith/index.html#690-691"
+      },
+      "note": "Transliteration and English definitions."
+    },
+    {
+      "id": "bibliography",
+      "title": "Bibliography",
+      "pages": {
+        "printed_start": 675,
+        "printed_end": 678,
+        "pdf_start": 348,
+        "pdf_end": 349,
+        "flipbook_spread": "694-695",
+        "start_side": "left",
+        "flipbook_url": "https://islamicbulletin.org/en/ebooks/resources/muntakhab_ahadith/index.html#694-695"
+      },
+      "note": "Sources and publication details."
+    }
+  ],
+  "sources": {
+    "edition_pdf": "https://islamicbulletin.org/en/ebooks/resources/muntakhab_ahadith_complete.pdf",
+    "edition_pdf_sha256": "1baf1cabf4e504979fce346fb37f823a442b59ac4db503fa7a241143c8c106db",
+    "flipbook": "https://islamicbulletin.org/en/ebooks/resources/muntakhab_ahadith/index.html#1",
+    "contents": [
+      "https://islamicbulletin.org/en/ebooks/resources/muntakhab_ahadith/index.html#2-3",
+      "https://islamicbulletin.org/en/ebooks/resources/muntakhab_ahadith/index.html#4-5"
+    ],
+    "flipbook_page_map": "https://islamicbulletin.org/en/ebooks/resources/muntakhab_ahadith/files/assets/common/pager.js",
+    "numbering_cross_check": {
+      "web_transcription": [
+        "https://www.siratalmustaqim.com/muntakhab-ahadith-1.php",
+        "https://www.siratalmustaqim.com/muntakhab-ahadith-2.php",
+        "https://www.siratalmustaqim.com/muntakhab-ahadith-3.php",
+        "https://www.siratalmustaqim.com/muntakhab-ahadith-4.php",
+        "https://www.siratalmustaqim.com/muntakhab-ahadith-5.php",
+        "https://www.siratalmustaqim.com/muntakhab-ahadith-6.php"
+      ],
+      "archive_ocr": "https://archive.org/stream/MuntakhabAhadith-english-ByShaykhMuhammadYusufKandhelvir.a/MuntakhabAhadith-english-ByShaykhMuhammadYusufKandhelvir.a_djvu.txt"
+    }
+  }
+}
