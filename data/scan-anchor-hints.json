@@ -1,0 +1,40 @@
+{
+  "pdf_sha256": "1baf1cabf4e504979fce346fb37f823a442b59ac4db503fa7a241143c8c106db",
+  "hints": {
+    "hadith:dhikr:11": {
+      "printed_page": 274,
+      "y_min": 0.075,
+      "y_max": 0.105,
+      "pattern": "imr[aā]n.{0,30}(?:ibne|husain)",
+      "reason": "The printed English number is 11. At default DPI OCR drops one digit."
+    },
+    "hadith:ikram-ul-muslim:72": {
+      "printed_page": 420,
+      "y_min": 0.285,
+      "y_max": 0.312,
+      "pattern": "abdull[aā]h.{0,30}umar",
+      "reason": "The printed English number is 72. OCR omits it from the translation line."
+    }
+  },
+  "arabic_bands": {
+    "hadith:ikram-ul-muslim:228": [
+      [
+        471,
+        0.87,
+        0.976
+      ],
+      [
+        472,
+        0.066,
+        0.24
+      ]
+    ],
+    "hadith:ikram-ul-muslim:301": [
+      [
+        497,
+        0.392,
+        0.528
+      ]
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+node_modules/
+dist/
+.cache/
+.venv/
+__pycache__/
+playwright-report/
+test-results/
+local/
+*.sqlite-wal
+*.sqlite-shm
+
+# Keep source material, review data, and credentials local.
+artifacts/
+*.pdf
+*.sqlite
+*.db
+data/sample-reviews.json
+.env
+.env.*
