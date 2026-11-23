@@ -100,7 +100,7 @@ def make_record(entry, book, pages, en=(), ar=(), note=None, anchor=None, flags=
         elif rows and confidence(rows) < (72 if field == 'english' else 65):
             limitations.append(f'{field}_low_ocr_confidence')
     return {'id': entry.id, 'topic_id': entry.topic_id, 'kind': entry.kind, 'status': status,
-            'english': english_text or None, 'arabic': arabic_text or None, 'notes': note,
+            'english': english_text or None, 'arabic': arabic_text or None, 'urdu': None, 'notes': note,
             'source': {'start': book.locator(start), 'end': book.locator(end), 'type': 'window' if status == 'unresolved' else 'candidate',
                        'anchor': {'printed_page': anchor.line.page, 'y': round(anchor.line.y0, 4), 'ocr': anchor.evidence,
                                   'method': anchor.mode} if anchor else None,

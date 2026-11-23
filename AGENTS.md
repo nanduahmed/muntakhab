@@ -12,7 +12,8 @@ Open the relevant installed `SKILL.md` before making UI or UX changes. Skill pat
 | Reading journeys, navigation between screens, or loading, empty, and error states | [`ux-flow-planner`](../.claude/skills/ux-flow-planner/SKILL.md) |
 | Layout, typography, Arabic/English presentation, components, responsive design, or accessibility | [`ui-ux-pro-max`](../.claude/skills/ui-ux-pro-max/SKILL.md) |
 | Shared tokens or component styling conventions | [`design-system`](../.claude/skills/design-system/SKILL.md), optionally [`ui-styling`](../.claude/skills/ui-styling/SKILL.md). Keep the existing React and CSS setup; do not adopt a new framework just because a skill suggests it. |
-| OCR, record identity, database, or export | Use the pinned scan, manifest, CLI help, and pipeline tests. UX skills are not transcription or source authorities. |
+| OCR, record identity, database, corpus YAML, or export | Use the pinned scan, manifest, CLI help, and pipeline tests. UX skills are not transcription or source authorities. |
+| Interface i18n (English/Urdu) or reader language controls | `src/i18n.jsx` holds every UI string. Keep the two controls separate: interface language (`en`/`ur`) and reading language (`all`/`ar`/`en`/`ur`). Urdu UI is `dir="rtl"`; never set letter-spacing on Urdu script. |
 
 This source checkout does not bundle the workspace skills. If they are unavailable, use the recorded decisions in `docs/UX-findings.md`. Document substantive flow or navigation changes there.
 
@@ -21,11 +22,14 @@ This source checkout does not bundle the workspace skills. If they are unavailab
 | Path | Responsibility |
 | --- | --- |
 | `src/main.jsx` | React routes and reader screens: chapter disclosure, topic pages, type/language switches, and fallback states. |
+| `src/i18n.jsx` | English/Urdu interface strings, `useI18n()`, UI language provider (RTL). No religious text appears here. |
 | `src/book.js` | Frontend helpers for topic URLs, indexed entries, and scan links. |
 | `src/styles.css`, `src/HeroArt.jsx`, `public/mark.svg` | Shared CSS tokens, responsive reading layout, and decorative artwork. |
 | `data/book-index.json` | Runtime edition manifest: chapter order, topic IDs, citations, numbering sequences, and page map. Derived from `../muntakhab-ahadith-index.yaml`; the runtime manifest is self-contained in this checkout. |
+| `data/corpus.yaml` | Committed complete corpus inventory (214 passages + 1,507 ahadith) with empty `arabic`/`english`/`urdu` fields. Verified by `build-corpus --check`. Never add machine-translated text here. |
 | `data/scan-anchor-hints.json` | PDF-pinned OCR locator hints, not reviewed text. |
 | `tools/booktool.py`, `tools/book_model.py` | CLI entry point and manifest validation, stable IDs, and page mapping. |
+| `tools/corpus.py` | YAML corpus build/merge/check, validation, and adaptation of hand-entered translations into review sheets. |
 | `tools/ocr_engine.py`, `tools/segment.py` | Split-scan rendering, OCR cache and coordinates, and segmentation into candidate readings. |
 | `tools/store.py` | SQLite import, draft and review history, validation, and the reader export. |
 | `public/data/readings.json` | Generated browser snapshot. Use `booktool.py export` for local reads; keep the checked-in snapshot reference-only unless publication is approved. Never put a raw OCR bundle here. |
@@ -50,9 +54,15 @@ Repeat `--topic` to check more than one topic. Omit it only when a full run is n
 ## Protect content and data
 
 - **Preserve identity and counts.** Use `ayah:<topic-id>:<1-based-passage-position>` and `hadith:<sequence-id>:<printed-number>`. ‘Ilm and Dhikr each have a Hadith #1. Preserve repeated Qur’an references, excerpts, verse ranges, and variants under the same printed hadith number. The baseline is 29 topics, 214 standalone Qur’an passages covering 398 ayat, and 1,507 numbered Ahadith. Embedded quotes, notes, and front/back matter are not additional readings. Do not renumber existing IDs or edit the manifest and database fingerprint to force an import; treat legitimate ID or edition changes as a migration.
-- **Separate OCR from approval.** Import into a dedicated local SQLite file or a copy, first with `import --dry-run`. Keep reimports transactional and idempotent. On corrections, use `review-sheet`, verify wording and exact printed pages, and apply an explicit `accept` with a reviewer and the current `base_revision`. Leave an unchecked language blank (`null`). Preserve history and never promote bulk OCR or overwrite reviewed text during extraction.
-- **Publish checked text only.** Export to `public/data/readings.json` from SQLite. Reference-only entries may have estimated scan links, never draft text. Keep raw bundles, SQLite files, and downloaded scans out of `public/`. Do not modify a production database or publish a new corpus without explicit approval.
-- **Preserve reading behavior.** Keep chapter disclosures keyboard-operable, topic URLs stable, Ayat/Ahadith and language controls separate, and Arabic marked with `lang="ar"` and `dir="rtl"`. A topic with no standalone Ayat should open to Ahadith. A failed snapshot request must still leave references and scan links available.
+- **Separate OCR from approval.** Import into a dedicated local SQLite file or a copy, first with `import --dry-run`. Keep reimports transactional and idempotent. On corrections, use `review-sheet`, verify wording and exact printed pages, and apply an explicit `accept` with a reviewer and the current `base_revision`. Leave an unchecked language blank (`null`). Preserve history and never promote bulk OCR or overwrite reviewed text during extraction. Hand-entered translations from `data/corpus.yaml` follow the same path via `import-corpus --reviewer`; they are recorded as versioned reviews and publish only through `export`.
+- **Publish checked text only.** Export to `public/data/readings.json` from SQLite. Reference-only entries may have estimated scan links, never draft text. Keep raw bundles, SQLite files, and downloaded scans out of `public/`. Do not modify a production database or publish a new corpus without explicit approval. Never populate `public/data/readings.json` from `data/corpus.yaml` without the editor’s checked entries and approval.
+- **Preserve reading behavior.** Keep chapter disclosures keyboard-operable, topic URLs stable, Ayat/Ahadith and language controls separate, and Arabic marked with `lang="ar"` and `dir="rtl"` (Urdu content: `lang="ur"`, `dir="rtl"`, Nastaliq face). A topic with no standalone Ayat should open to Ahadith. A failed snapshot request must still leave references and scan links available.
+
+## The corpus and translations
+
+- `data/corpus.yaml` holds the full inventory (1,721 entries) with empty text fields. Never add text from your own knowledge or the network, and never machine-translate the Qur’an or Ahadith — the editor supplies translations. Stage them with `python tools/booktool.py import-corpus --db local/reader.sqlite --file data/corpus.yaml --reviewer "Name"`.
+- Verify the committed inventory with `python tools/booktool.py build-corpus --check` (mirrored by `tests/test_corpus.py`). Use `build-corpus --merge` to preserve entered text when the edition index changes.
+- The interface languages are English and Urdu; the reading languages are All/Arabic/English/Urdu. Keep `src/i18n.jsx` complete for both interface languages whenever you touch UI copy — an untranslated key falls back to English silently.
 
 ## Verify before handing off
 

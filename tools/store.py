@@ -120,7 +120,7 @@ def validate_bundle(bundle, book):
         if not entry or r['id'] not in needed or r['id'] in seen or (entry.topic_id,entry.kind) != (r['topic_id'],r['kind']):
             raise ValueError(f'Unexpected, duplicate, or mismapped record: {r["id"]}')
         seen.add(entry.id)
-        check_fields(r, ('english','arabic','notes'), entry.id)
+        check_fields(r, ('english','arabic','urdu','notes'), entry.id)
         source = r['source']
         a,b = source['start'],source['end']
         check_pages(book, entry,a['printed_page'],b['printed_page'])
@@ -160,7 +160,7 @@ def apply_bundle(db, bundle, book):
         db.execute('INSERT OR IGNORE INTO draft_history(entry_id,sha,run_sha,payload) VALUES(?,?,?,?)',(identifier,rhash,sha,canonical(r)))
         if previous:
             old = json.loads(previous['payload'])
-            if any(old.get(lang) and not r.get(lang) for lang in ('english','arabic')):
+            if any(old.get(lang) and not r.get(lang) for lang in ('english','arabic','urdu')):
                 stats['kept_better_draft'] += 1
                 continue
         db.execute('''INSERT INTO drafts(entry_id,sha,status) VALUES(?,?,?)
@@ -195,7 +195,7 @@ def review_sheet(db, book, topic_ids, unresolved_only=False):
                 'decision':None, 'base_revision':revision, 'based_on_draft':sha,
                 # Candidates are side-by-side, not pre-filled into publishable text fields.
                 'printed_start':data.get('printed_start'), 'printed_end':data.get('printed_end'),
-                'english':data.get('english'), 'arabic':data.get('arabic'), 'notes':data.get('notes'),
+                'english':data.get('english'), 'arabic':data.get('arabic'), 'urdu':data.get('urdu'), 'notes':data.get('notes'),
                 'citation':data.get('citation'), 'excerpt':data.get('excerpt',False),
                 'suggested':evidence or {'status':'not_extracted','source':{'start':book.locator(pages[0]),'end':book.locator(pages[1])}},
             })
@@ -220,14 +220,19 @@ def apply_reviews(db, data, book):
         if not entry or identifier in seen:
             raise ValueError(f'Unknown or repeated approved entry: {identifier}')
         seen.add(identifier)
-        check_fields(row, ('english','arabic','notes','citation'), identifier)
-        if not (row.get('english') or row.get('arabic')):
+        check_fields(row, ('english','arabic','urdu','notes','citation'), identifier)
+        if not (row.get('english') or row.get('arabic') or row.get('urdu')):
             raise ValueError(f'{identifier}: at least one corrected language is required')
-        check_pages(book, entry,row.get('printed_start'),row.get('printed_end'))
+        start, end = row.get('printed_start'), row.get('printed_end')
+        if start is None and end is None:
+            # Translation supplied without scan-page evidence; readers fall back to the topic scan link.
+            pass
+        else:
+            check_pages(book, entry, start, end)
         excerpt = row.get('excerpt',False)
         if type(excerpt) is not bool or excerpt and entry.kind != 'ayah':
             raise ValueError(f'{identifier}: only Qur’an passages can be marked as excerpts')
-        value = {key:row.get(key) for key in ('printed_start','printed_end','english','arabic','notes','citation')}
+        value = {key:row.get(key) for key in ('printed_start','printed_end','english','arabic','urdu','notes','citation')}
         value['excerpt'] = excerpt
         old, revision, author = current.get(identifier,(None,0,None))
         if old==value and author==reviewer.strip():
